@@ -1,3 +1,8 @@
 #!/bin/sh
 
-${RELEASE_ROOT_DIR}/bin/myapp command Elixir.ReleaseTasks migrate_pre
+echo "pre start hook:"
+cmd="${RELEASE_ROOT_DIR}/bin/edistillery command Elixir.Edistillery.ReleaseTasks migrate_pre"
+echo "cmd: ${cmd}"
+output=`eval ${cmd}`
+echo ${output}
+echo "/finished"

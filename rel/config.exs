@@ -47,12 +47,12 @@ end
 release :edistillery do
   set version: "0.0.1"
   set applications: [
-    :runtime_tools
+    :runtime_tools,
+    :edistillery
   ]
   set vm_args: "rel/bootstrap/vm.args"
   set include_erts: true
-  set commands: [
-    "migrate": "rel/commands/migrate_pre.sh"
-  ]
+  set pre_start_hook: "rel/hooks/pre_start.sh"
+  set post_start_hook: "rel/hooks/post_start.sh"
 end
 

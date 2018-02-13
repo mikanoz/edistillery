@@ -26,7 +26,7 @@ sudo apt-get install postgresql-9.6 -y
 sudo apt-get install inotify-tools -y
 
 sudo su
-echo "local   all             postgres                                trust" >> /etc/postgresql/9.6/main/pg_hba.conf
-echo "host    all             postgres        127.0.0.1/32            trust" >> /etc/postgresql/9.6/main/pg_hba.conf
+echo "local   all             postgres                                trust" | cat - /etc/postgresql/9.6/main/pg_hba.conf > temp && mv temp /etc/postgresql/9.6/main/pg_hba.conf
+echo "host    all             postgres        127.0.0.1/32            trust" | cat - /etc/postgresql/9.6/main/pg_hba.conf > temp && mv temp /etc/postgresql/9.6/main/pg_hba.conf
 service postgresql restart
 exit

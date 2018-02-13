@@ -11,3 +11,7 @@ release :edistillery do
 end
 
 move config.prod.secret_key_base to ENV vars
+
+# read logs
+tail -f -n 20 _build/prod/rel/edistillery/var/log/*.log*
+
