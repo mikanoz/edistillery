@@ -1,0 +1,13 @@
+deps -> {:distillery, "~> 1.5", runtime: false}
+mix release.init
+
+release :edistillery do
+  set version: "0.0.1" <----------
+  set applications: [
+    :runtime_tools
+  ]
+  set vm_args: "./vm.args" <----- see vm.args file
+  set include_erts: true <---- completed compile
+end
+
+move config.prod.secret_key_base to ENV vars
