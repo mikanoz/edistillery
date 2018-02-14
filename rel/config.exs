@@ -45,7 +45,7 @@ end
 # will be used by default
 
 release :edistillery do
-  set version: "0.0.1"
+  set version: "0.0.6"
   set applications: [
     :runtime_tools,
     :edistillery

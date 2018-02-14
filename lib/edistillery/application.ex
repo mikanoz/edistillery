@@ -12,6 +12,7 @@ defmodule Edistillery.Application do
       supervisor(Edistillery.Repo, []),
       # Start the endpoint when the application starts
       supervisor(EdistilleryWeb.Endpoint, []),
+      supervisor(Task.Supervisor, [[name: Edistillery.TaskSupervisor]])
       # Start your own worker by calling: Edistillery.Worker.start_link(arg1, arg2, arg3)
       # worker(Edistillery.Worker, [arg1, arg2, arg3]),
     ]
